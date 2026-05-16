@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apple Chronicles - From Wild Roots to Orchard Legends</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .serif {
+        font-family: 'Playfair Display', serif;
+    }
+    .hero-bg {
+        background: linear-gradient(135deg, rgba(185,28,28,0.9) 0%, rgba(22,101,52,0.85) 100%), 
+                    url('https://images.unsplash.com/photo-1568702846914-96b305d2c5c4?q=80&w=2070&auto=format&fit=crop') center/cover;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -29px;
+        top: 8px;
+        width: 16px;
+        height: 16px;
+        background: #b91c1c;
+        border: 3px solid #fef3c7;
+        border-radius: 50%;
+        z-index: 10;
+    }
+    .card-hover {
+        transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    .float-animation {
+        animation: float 3s ease-in-out infinite;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+</head>
+<body class="bg-amber-50 text-stone-800">
+    <!-- Header -->
+    <header id="home" class="bg-amber-50/95 backdrop-blur-sm sticky top-0 z-50 border-b border-amber-100 shadow-sm">
+        <nav class="container mx-auto px-4 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-red-700 to-red-900 rounded-lg flex items-center justify-center shadow-md">
+                        <i class="fa-solid fa-apple-whole text-amber-50 text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-red-800 serif">Apple Chronicles</h1>
+                        <p class="text-xs text-green-800 font-medium -mt-1">From Wild Roots to Orchard Legends</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-stone-700 hover:text-red-700 font-medium transition">Home</a>
+                    <a href="#history" class="text-stone-700 hover:text-red-700 font-medium transition">History</a>
+                    <a href="#gallery" class="text-stone-700 hover:text-red-700 font-medium transition">Varieties</a>
+                    <a href="#timeline" class="text-stone-700 hover:text-red-700 font-medium transition">Timeline</a>
+                    <a href="#facts" class="bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-full font-medium transition shadow-md hover:shadow-lg">Learn More</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-red-800 text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="#home" class="block text-stone-700 hover:text-red-700 font-medium py-2 transition">Home</a>
+                <a href="#history" class="block text-stone-700 hover:text-red-700 font-medium py-2 transition">History</a>
+                <a href="#gallery" class="block text-stone-700 hover:text-red-700 font-medium py-2 transition">Varieties</a>
+                <a href="#timeline" class="block text-stone-700 hover:text-red-700 font-medium py-2 transition">Timeline</a>
+                <a href="#facts" class="block bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-full font-medium transition text-center">Learn More</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[85vh] flex items-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-amber-50/20"></div>
+        <div class="container mx-auto px-4 lg:px-8 py-20 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-block bg-amber-100/20 backdrop-blur-md px-4 py-2 rounded-full mb-6 border border-white/30">
+                    <p class="text-sm font-medium"><i class="fa-solid fa-seedling mr-2"></i>10,000 Years of Cultivation</p>
+                </div>
+                <h2 class="text-5xl md:text-7xl font-bold mb-6 serif leading-tight">
+                    The Journey of<br/>Humanity's Favorite Fruit
+                </h2>
+                <p class="text-xl md:text-2xl mb-8 text-amber-50/95 leading-relaxed">
+                    From the wild forests of Kazakhstan to orchards worldwide, discover how the humble apple shaped civilizations, inspired myths, and became a global culinary icon.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#timeline" class="bg-amber-50 text-red-800 px-8 py-4 rounded-full font-semibold hover:bg-white transition shadow-xl hover:shadow-2xl hover:scale-105 transform">
+                        Explore the Timeline <i class="fa-solid fa-arrow-down ml-2"></i>
+                    </a>
+                    <a href="#gallery" class="bg-white/10 backdrop-blur-md border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition">
+                        View Varieties <i class="fa-solid fa-images ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-amber-50 to-transparent"></div>
+    </section>
+
+    <!-- History Intro Section -->
+    <section id="history" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-red-700 font-semibold text-sm uppercase tracking-wider">Ancient Origins</span>
+                    <h3 class="text-4xl md:text-5xl font-bold mt-3 mb-6 serif text-stone-900">Where It All Began</h3>
+                    <p class="text-lg text-stone-600 mb-4 leading-relaxed">
+                        The story of the apple begins in the mountains of Central Asia, particularly in Kazakhstan, where wild <em class="serif text-green-800 font-semibold">Malus sieversii</em> still grows today. This ancient ancestor is the primary progenitor of the domesticated apples we know and love.
+                    </p>
+                    <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                        Through millennia of natural selection and human cultivation, the apple traveled along trade routes, crossed continents, and evolved into over 7,500 known varieties. Each apple tells a story of migration, innovation, and cultural exchange.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-700 serif">7,500+</div>
+                            <div class="text-sm text-stone-600 mt-1">Varieties</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-700 serif">4,000+</div>
+                            <div class="text-sm text-stone-600 mt-1">Years Ago</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-red-700 serif">80M+</div>
+                            <div class="text-sm text-stone-600 mt-1">Tons/Year</div>
+                        </div>
+                    </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1570913149827-d2ac84ab45f8?q=80&w=2070&auto=format&fit=crop" alt="Apple orchard in mountains" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fa-solid fa-location-dot text-red-700 text-xl"></i>
+                            <span class="font-semibold text-stone-900">Tian Shan Mountains</span>
+                        </div>
+                        <p class="text-sm text-stone-600">The ancestral home of wild apples in Kazakhstan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-b from-white to-amber-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">Varieties</span>
+                <h3 class="text-4xl md:text-5xl font-bold mt-3 mb-4 serif text-stone-900">Six Apple Icons</h3>
+                <p class="text-lg text-stone-600">From tart to sweet, crisp to soft — each variety has its own character, history, and perfect use.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Granny Smith -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="grannyGradient" cx="40%" cy="40%">
+                                    <stop offset="0%" stop-color="#7BC043"/>
+                                    <stop offset="100%" stop-color="#4A7C2E"/>
+                                </radialGradient>
+                            </defs>
+                            <ellipse cx="100" cy="110" rx="70" ry="75" fill="url(#grannyGradient)"/>
+                            <path d="M 100 35 Q 95 40 98 50" stroke="#2D5016" stroke-width="3" fill="none"/>
+                            <ellipse cx="105" cy="40" rx="8" ry="5" fill="#2D5016"/>
+                            <ellipse cx="80" cy="80" rx="15" ry="20" fill="#FFFFFF" opacity="0.2"/>
+                            <circle cx="70" cy="100" r="3" fill="#3A5F1E" opacity="0.3"/>
+                            <circle cx="120" cy="130" r="4" fill="#3A5F1E" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-2xl font-bold serif text-stone-900">Granny Smith</h4>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Tart</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">Originated in Australia in 1868. Known for its bright green skin and sharp, tangy flavor. Perfect for baking and pies.</p>
+                        <div class="flex items-center gap-4 text-sm text-stone-500">
+                            <span><i class="fa-solid fa-calendar mr-1"></i>1868</span>
+                            <span><i class="fa-solid fa-flag mr-1"></i>Australia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Red Delicious -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="redDelGradient" cx="40%" cy="40%">
+                                    <stop offset="0%" stop-color="#DC2626"/>
+                                    <stop offset="100%" stop-color="#7F1D1D"/>
+                                </radialGradient>
+                            </defs>
+                            <path d="M 100 40 Q 70 45 65 70 Q 60 110 70 150 Q 100 170 130 150 Q 140 110 135 70 Q 130 45 100 40 Z" fill="url(#redDelGradient)"/>
+                            <path d="M 100 30 Q 98 35 100 45" stroke="#5C1616" stroke-width="3" fill="none"/>
+                            <ellipse cx="105" cy="35" rx="8" ry="5" fill="#5C1616"/>
+                            <ellipse cx="85" cy="75" rx="12" ry="18" fill="#FFFFFF" opacity="0.15"/>
+                            <path d="M 70 150 L 65 165 L 75 150" fill="#991B1B"/>
+                            <path d="M 100 150 L 98 170 L 108 150" fill="#991B1B"/>
+                            <path d="M 130 150 L 135 165 L 125 150" fill="#991B1B"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-2xl font-bold serif text-stone-900">Red Delicious</h4>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Sweet</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">America's most iconic apple. Deep red, elongated shape with five distinct bumps. Mild, sweet flavor best eaten fresh.</p>
+                        <div class="flex items-center gap-4 text-sm text-stone-500">
+                            <span><i class="fa-solid fa-calendar mr-1"></i>1870s</span>
+                            <span><i class="fa-solid fa-flag mr-1"></i>USA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fuji -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="fujiGradient" cx="40%" cy="40%">
+                                    <stop offset="0%" stop-color="#F59E0B"/>
+                                    <stop offset="60%" stop-color="#DC2626"/>
+                                    <stop offset="100%" stop-color="#B91C1C"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="100" cy="105" r="70" fill="url(#fujiGradient)"/>
+                            <path d="M 100 30 Q 98 35 100 45" stroke="#7F1D1D" stroke-width="3" fill="none"/>
+                            <ellipse cx="105" cy="35" rx="8" ry="5" fill="#7F1D1D"/>
+                            <ellipse cx="80" cy="80" rx="15" ry="20" fill="#FFFFFF" opacity="0.15"/>
+                            <circle cx="60" cy="90" r="2" fill="#991B1B" opacity="0.4"/>
+                            <circle cx="140" cy="110" r="3" fill="#991B1B" opacity="0.4"/>
+                            <circle cx="90" cy="130" r="2" fill="#991B1B" opacity="0.4"/>
+                            <circle cx="120" cy="140" r="2" fill="#991B1B" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-2xl font-bold serif text-stone-900">Fuji</h4>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">Crisp</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">Developed in Japan in the 1930s. Super sweet, incredibly crisp, and long-lasting. Named after Mount Fuji.</p>
+                        <div class="flex items-center gap-4 text-sm text-stone-500">
+                            <span><i class="fa-solid fa-calendar mr-1"></i>1930s</span>
+                            <span><i class="fa-solid fa-flag mr-1"></i>Japan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gala -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="galaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FCD34D"/>
+                                    <stop offset="40%" stop-color="#F97316"/>
+                                    <stop offset="100%" stop-color="#DC2626"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="100" cy="105" r="68" fill="#FCD34D"/>
+                            <path d="M 80 40 Q 90 60 100 80 Q 110 100 115 140 Q 100 160 85 140 Q 75 100 80 60 Z" fill="url(#galaGradient)" opacity="0.9"/>
+                            <path d="M 120 45 Q 110 65 105 85 Q 100 105 110 145 Q 120 155 130 145 Q 135 105 125 65 Z" fill="url(#galaGradient)" opacity="0.9"/>
+                            <path d="M 100 30 Q 98 35 100 45" stroke="#B91C1C" stroke-width="3" fill="none"/>
+                            <ellipse cx="105" cy="35" rx="8" ry="5" fill="#B91C1C"/>
+                            <ellipse cx="80" cy="85" rx="12" ry="16" fill="#FFFFFF" opacity="0.2"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-2xl font-bold serif text-stone-900">Gala</h4>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Mild</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">From New Zealand, 1930s. Red-striped skin, aromatic, and mildly sweet. One of the most popular eating apples worldwide.</p>
+                        <div class="flex items-center gap-4 text-sm text-stone-500">
+                            <span><i class="fa-solid fa-calendar mr-1"></i>1930s</span>
+                            <span><i class="fa-solid fa-flag mr-1"></i>NZ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Honeycrisp -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden bg-gradient-to-br from-rose-50 to-rose-100 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="honeyGradient" cx="40%" cy="40%">
+                                    <stop offset="0%" stop-color="#FEF3C7"/>
+                                    <stop offset="50%" stop-color="#F59E0B"/>
+                                    <stop offset="100%" stop-color="#DC2626"/>
+                                </radialGradient>
+                            </defs>
+                            <circle cx="100" cy="105" r="70" fill="#FEF3C7"/>
+                            <path d="M 70 50 Q 80 80 85 110 Q 90 140 100 160 Q 110 140 115 110 Q 120 80 130 50 Q 100 40 70 50 Z" fill="url(#honeyGradient)" opacity="0.85"/>
+                            <circle cx="100" cy="105" r="50" fill="#DC2626" opacity="0.3"/>
+                            <path d="M 100 30 Q 98 35 100 45" stroke="#991B1B" stroke-width="3" fill="none"/>
+                            <ellipse cx="105" cy="35" rx="8" ry="5" fill="#991B1B"/>
+                            <ellipse cx="82" cy="80" rx="14" ry="18" fill="#FFFFFF" opacity="0.25"/>
+                            <circle cx="65" cy="100" r="2" fill="#F59E0B" opacity="0.5"/>
+                            <circle cx="135" cy="115" r="3" fill="#F59E0B" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-2xl font-bold serif text-stone-900">Honeycrisp</h4>
+                            <span class="bg-rose-100 text-rose-800 text-xs font-semibold px-3 py-1 rounded-full">Premium</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">University of Minnesota, 1991. Explosively crisp texture with balanced sweet-tart flavor. Revolutionized the apple industry.</p>
+                        <div class="flex items-center gap-4 text-sm text-stone-500">
+                            <span><i class="fa-solid fa-calendar mr-1"></i>1991</span>
+                            <span><i class="fa-solid fa-flag mr-1"></i>USA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Braeburn -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="h-64 overflow-hidden bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center">
+                        <svg viewBox="0 0 200 200" class="w-full h-full p-8" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="braeburnGradient" cx="40%" cy="40%">
+                                    <stop offset="0%" stop-color="#F87171"/>
+                                    <stop offset="40%" stop-color="#DC2626"/>
+                                    <stop offset="100%" stop-color="#7F1D1D"/>
+                                </radialGradient>
+                                <pattern id="braeburnSpots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <circle cx="10" cy="10" r="2" fill="#FCD34D" opacity="0.6"/>
+                                </pattern>
+                            </defs>
+                            <circle cx="100" cy="105" r="70" fill="url(#braeburnGradient)"/>
+                            <circle cx="100" cy="105" r="70" fill="url(#braeburnSpots)"/>
+                            <path d="M 100 30 Q 98 35 100 45" stroke="#5C1616" stroke-width="3" fill="none"/>
+                            <ellipse cx="105" cy="35" rx="8" ry="5" fill="#5C1616"/>
+                            <ellipse cx="80" cy="80" rx="15" ry="20" fill="#FFFFFF" opacity="0.12"/>
+                            <circle cx="70" cy="95" r="3" fill="#F59E0B" opacity="0.7"/>
+                            <circle cx="130" cy="120" r="2.5" fill="#F59E0B" opacity="0.7"/>
+                            <circle cx="95" cy="135" r="2" fill="#F59E0B" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-2xl font-bold serif text-stone-900">Braeburn</h4>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Complex</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">Discovered in New Zealand, 1952. Perfect balance of sweet and tart with hints of spice and pear. Excellent keeper.</p>
+                        <div class="flex items-center gap-4 text-sm text-stone-500">
+                            <span><i class="fa-solid fa-calendar mr-1"></i>1952</span>
+                            <span><i class="fa-solid fa-flag mr-1"></i>NZ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-20 bg-amber-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full blur-3xl opacity-30 -mr-48 -mt-48"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-30 -ml-48 -mb-48"></div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-red-700 font-semibold text-sm uppercase tracking-wider">Journey Through Time</span>
+                <h3 class="text-4xl md:text-5xl font-bold mt-3 mb-4 serif text-stone-900">Apple History Timeline</h3>
+                <p class="text-lg text-stone-600">Trace the apple's epic journey across continents and cultures over thousands of years.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="relative border-l-4 border-red-200 ml-4 md:ml-0">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-12 pb-12">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-red-700 text-white text-sm font-bold px-4 py-1 rounded-full">8000 BCE</span>
+                                <span class="text-stone-500 text-sm"><i class="fa-solid fa-mountain mr-1"></i>Central Asia</span>
+                            </div>
+                            <h4 class="text-2xl font-bold serif text-stone-900 mb-3">Origins in the Tian Shan Mountains</h4>
+                            <p class="text-stone-600 leading-relaxed">
+                                Wild apples <em>Malus sieversii</em> evolve in the forests of Kazakhstan. Genetic studies confirm this region as the birthplace of all domesticated apples. Bears and horses spread seeds across the landscape.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-12 pb-12">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-green-700 text-white text-sm font-bold px-4 py-1 rounded-full">2000 BCE</span>
+                                <span class="text-stone-500 text-sm"><i class="fa-solid fa-route mr-1"></i>Silk Road</span>
+                            </div>
+                            <h4 class="text-2xl font-bold serif text-stone-900 mb-3">Spread Via Ancient Trade Routes</h4>
+                            <p class="text-stone-600 leading-relaxed">
+                                Apples travel west along the Silk Road through Persia to the Mediterranean. Merchant caravans carry seeds and grafted saplings. The fruit becomes prized in Egyptian and Mesopotamian cultures.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-12 pb-12">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-red-700 text-white text-sm font-bold px-4 py-1 rounded-full">200 BCE</span>
+                                <span class="text-stone-500 text-sm"><i class="fa-solid fa-landmark mr-1"></i>Roman Empire</span>
+                            </div>
+                            <h4 class="text-2xl font-bold serif text-stone-900 mb-3">Cultivation Perfected by Romans</h4>
+                            <p class="text-stone-600 leading-relaxed">
+                                Romans master grafting techniques and develop dozens of varieties. They document cultivation methods and spread orchards across Europe. Apple becomes a symbol of love and fertility in Roman culture.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-12 pb-12">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-green-700 text-white text-sm font-bold px-4 py-1 rounded-full">1620s</span>
+                                <span class="text-stone-500 text-sm"><i class="fa-solid fa-ship mr-1"></i>New World</span>
+                            </div>
+                            <h4 class="text-2xl font-bold serif text-stone-900 mb-3">Introduction to America by Colonists</h4>
+                            <p class="text-stone-600 leading-relaxed">
+                                European colonists bring apple seeds and cuttings to North America. The Pilgrims plant the first orchard in Massachusetts. Johnny Appleseed later spreads apples across the frontier in the 1800s.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-12">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-red-700 text-white text-sm font-bold px-4 py-1 rounded-full">1900s+</span>
+                                <span class="text-stone-500 text-sm"><i class="fa-solid fa-flask mr-1"></i>Modern Era</span>
+                            </div>
+                            <h4 class="text-2xl font-bold serif text-stone-900 mb-3">Modern Breeding & Global Production</h4>
+                            <p class="text-stone-600 leading-relaxed">
+                                Scientific breeding creates new varieties like Honeycrisp and Cosmic Crisp. Today, China leads production with 45M tons annually. Gene banks preserve heritage varieties while breeders develop disease-resistant, climate-adapted apples for the future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section id="facts" class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">Did You Know?</span>
+                <h3 class="text-4xl md:text-5xl font-bold mt-3 mb-4 serif text-stone-900">Apple Facts & Lore</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center mx-auto mb-4 float-animation">
+                        <i class="fa-solid fa-dna text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-stone-900">DNA Complexity</h4>
+                    <p class="text-stone-600 text-sm">Apples have 57,000 genes — more than humans! This genetic diversity enables thousands of varieties.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-4 float-animation" style="animation-delay: 0.5s;">
+                        <i class="fa-solid fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-stone-900">Health Benefits</h4>
+                    <p class="text-stone-600 text-sm">An apple a day: rich in fiber, vitamin C, and antioxidants. The skin contains most nutrients!</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-amber-700 rounded-full flex items-center justify-center mx-auto mb-4 float-animation" style="animation-delay: 1s;">
+                        <i class="fa-solid fa-tree text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-stone-900">Orchard Life</h4>
+                    <p class="text-stone-600 text-sm">It takes 4-5 years for a new apple tree to produce fruit. Some trees live over 100 years!</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-orange-700 rounded-full flex items-center justify-center mx-auto mb-4 float-animation" style="animation-delay: 1.5s;">
+                        <i class="fa-solid fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-stone-900">Global Reach</h4>
+                    <p class="text-stone-600 text-sm">Apples are grown in all 50 US states and on every continent except Antarctica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-red-800 to-green-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 text-9xl">🍎</div>
+            <div class="absolute bottom-10 right-10 text-9xl">🍏</div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 text-center relative z-10">
+            <h3 class="text-4xl md:text-5xl font-bold mb-6 serif">Every Apple Has a Story</h3>
+            <p class="text-xl mb-8 text-amber-50/90 max-w-2xl mx-auto">
+                From ancient wild groves to your local market, the apple's journey continues. Next time you bite into one, remember: you're tasting 10,000 years of history.
+            </p>
+            <a href="#home" class="inline-block bg-white text-red-800 px-8 py-4 rounded-full font-semibold hover:bg-amber-50 transition shadow-xl hover:scale-105 transform">
+                Back to Top <i class="fa-solid fa-arrow-up ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-amber-50 py-12">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-red-700 to-red-900 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-apple-whole text-amber-50 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold serif">Apple Chronicles</h4>
+                        </div>
+                    <p class="text-amber-100/70 text-sm">Celebrating the rich history, science, and culture of the world's most beloved fruit.</p>
+                </div>
+                
+                <div>
+                    <h5 class="font-semibold mb-4 text-amber-50">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#history" class="text-amber-100/70 hover:text-amber-50 transition">History</a></li>
+                        <li><a href="#gallery" class="text-amber-100/70 hover:text-amber-50 transition">Varieties</a></li>
+                        <li><a href="#timeline" class="text-amber-100/70 hover:text-amber-50 transition">Timeline</a></li>
+                        <li><a href="#facts" class="text-amber-100/70 hover:text-amber-50 transition">Fun Facts</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-semibold mb-4 text-amber-50">Connect</h5>
+                    <p class="text-amber-100/70 text-sm mb-4">Follow the journey from wild roots to orchard legends</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-stone-800 hover:bg-red-700 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 hover:bg-red-700 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-stone-800 hover:bg-red-700 rounded-lg flex items-center justify-center transition">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 pt-8 text-center">
+                <p class="text-amber-100/60 text-sm mb-2">
+                    <strong class="text-amber-50">Apple Chronicles</strong> — From Wild Roots to Orchard Legends
+                </p>
+                <p class="text-amber-100/50 text-xs">
+                    © 2024 Apple Chronicles. Crafted with <i class="fa-solid fa-heart text-red-600"></i> for fruit lovers everywhere.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scroll with header offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
